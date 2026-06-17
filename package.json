@@ -1,0 +1,31 @@
+{
+  "name": "search-engine-ranking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naveen-1-1/search-engine-ranking.git"
+  },
+  "keywords": [],
+  "author": "Naveen Shankar",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Naveen-1-1/search-engine-ranking/issues"
+  },
+  "homepage": "https://github.com/Naveen-1-1/search-engine-ranking#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.15.2",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.4"
+  }
+}
