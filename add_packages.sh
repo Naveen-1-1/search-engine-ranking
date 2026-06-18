@@ -1,1 +1,1 @@
-npm install --save-dev eslint eslint-config-prettier prettier globals @eslint/js jest eslint-plugin-jest eslint-plugin-prettier
+npm install --save-dev eslint eslint-config-prettier prettier globals @eslint/js jest eslint-plugin-jest eslint-plugin-prettier live-server
