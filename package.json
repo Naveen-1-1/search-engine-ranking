@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-frontend": "live-server",
+    "dev-frontend": "live-server frontend",
     "dev-backend": "nodemon backend.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

@@ -15,18 +15,14 @@ const client = new MongoClient(uri, {
   },
 });
 
-async function run() {
-  try {
-    await client.connect();
+let db;
 
-    await client.db('admin').command({ ping: 1 });
+export async function connectToDb() {
+  if (db) return db;
 
-    console.log('Successfully connected to MongoDB!');
-  } catch (err) {
-    console.error('MongoDB connection failed:', err);
-  } finally {
-    await client.close();
-  }
+  await client.connect();
+  db = client.db('test_listings');
+
+  console.log('Connected to MongoDB');
+  return db;
 }
-
-run();
