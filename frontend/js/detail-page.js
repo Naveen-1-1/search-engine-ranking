@@ -1,7 +1,18 @@
 import { apiRequest, escapeHtml, formatDate, getIdFromQuery } from "./api.js";
 
 const container = document.querySelector("#recordDetail");
+const backToSearchLink = document.querySelector("#backToSearchLink");
 const id = getIdFromQuery();
+const returnUrl = new URLSearchParams(window.location.search).get("return");
+
+if (
+  backToSearchLink &&
+  returnUrl &&
+  returnUrl.startsWith("/") &&
+  !returnUrl.startsWith("//")
+) {
+  backToSearchLink.href = returnUrl;
+}
 
 if (!id) {
   container.innerHTML = `<div class="alert alert-warning mb-0">No record ID was provided.</div>`;

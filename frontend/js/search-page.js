@@ -77,7 +77,59 @@ document.addEventListener("click", (event) => {
   }
 });
 
+readStateFromUrl();
+applyStateToForm();
 runSearch();
+
+function readStateFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  state.q = params.get("q") || "";
+  state.category = params.get("category") || "";
+  state.source = params.get("source") || "";
+  state.from = params.get("from") || "";
+  state.to = params.get("to") || "";
+  state.page = Math.max(Number(params.get("page")) || 1, 1);
+  state.limit = Math.min(Math.max(Number(params.get("limit")) || 10, 1), 50);
+
+  const tags = params.get("tags");
+
+  state.tags = tags
+    ? tags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+    : [];
+}
+
+function applyStateToForm() {
+  searchInput.value = state.q;
+  filterForm.category.value = state.category;
+  filterForm.source.value = state.source;
+  filterForm.from.value = state.from;
+  filterForm.to.value = state.to;
+
+  const selectedTags = new Set(state.tags);
+
+  filterForm.querySelectorAll('input[name="tags"]').forEach((input) => {
+    input.checked = selectedTags.has(input.value);
+  });
+
+  updateTagFilterLabel();
+}
+
+function writeStateToUrl() {
+  const query = buildQuery(state);
+  const url = query ? `/?${query}` : "/";
+
+  history.replaceState(null, "", url);
+}
+
+function getSearchReturnUrl() {
+  const query = buildQuery(state);
+
+  return query ? `/?${query}` : "/";
+}
 
 function updateTagFilterLabel() {
   const selectedTags = [
@@ -106,11 +158,14 @@ function resetSearch() {
 
 async function runSearch() {
   results.innerHTML = `<div class="col-12"><div class="surface-card p-4">Loading results...</div></div>`;
+  writeStateToUrl();
 
   try {
     const query = buildQuery(state);
     const data = await apiRequest(`/search?${query}`);
 
+    state.page = data.page;
+    writeStateToUrl();
     renderResults(data);
     renderPagination(data);
   } catch (err) {
@@ -205,7 +260,7 @@ function renderResultCard(record, score, matchedTerms) {
           <div>
             <p class="eyebrow mb-1">${escapeHtml(record.category)} / ${escapeHtml(record.source)}</p>
             <h3 class="h4">
-              <a class="link-dark text-decoration-none" href="/record.html?id=${record._id}">
+              <a class="link-dark text-decoration-none" href="/record.html?id=${record._id}&return=${encodeURIComponent(getSearchReturnUrl())}">
                 ${escapeHtml(record.title)}
               </a>
             </h3>
