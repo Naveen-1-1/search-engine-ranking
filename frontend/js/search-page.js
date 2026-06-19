@@ -15,6 +15,7 @@ const state = {
 
 const searchForm = document.querySelector("#searchForm");
 const filterForm = document.querySelector("#filterForm");
+const resetSearchButton = document.querySelector("#resetSearchButton");
 const tagFilterLabel = document.querySelector("#tagFilterLabel");
 const searchInput = document.querySelector("#searchInput");
 const suggestions = document.querySelector("#suggestions");
@@ -62,6 +63,8 @@ filterForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
+resetSearchButton.addEventListener("click", resetSearch);
+
 searchInput.addEventListener("input", () => {
   clearTimeout(autocompleteTimer);
 
@@ -83,6 +86,22 @@ function updateTagFilterLabel() {
 
   tagFilterLabel.textContent =
     selectedTags.length === 0 ? "All tags" : selectedTags.join(", ");
+}
+
+function resetSearch() {
+  state.q = "";
+  state.category = "";
+  state.source = "";
+  state.tags = [];
+  state.from = "";
+  state.to = "";
+  state.page = 1;
+
+  searchInput.value = "";
+  filterForm.reset();
+  updateTagFilterLabel();
+  suggestions.style.display = "none";
+  runSearch();
 }
 
 async function runSearch() {
