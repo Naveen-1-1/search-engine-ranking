@@ -24,7 +24,6 @@ async function seedRecords() {
 
   await ensureDatabaseIndexes(db);
   await db.collection(COLLECTIONS.records).deleteMany({});
-  await db.collection(COLLECTIONS.searchEvents).deleteMany({});
 
   const records = rawRecords.map((record) => normalizeSeedRecord(record));
   await db

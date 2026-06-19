@@ -168,7 +168,7 @@ function renderMetrics(metrics) {
     <div class="col-md-3"><div class="metric-card"><span class="text-muted">Records</span><strong>${metrics.records.total}</strong></div></div>
     <div class="col-md-3"><div class="metric-card"><span class="text-muted">Published</span><strong>${metrics.records.published}</strong></div></div>
     <div class="col-md-3"><div class="metric-card"><span class="text-muted">Index Terms</span><strong>${metrics.searchIndex.uniqueTerms}</strong></div></div>
-    <div class="col-md-3"><div class="metric-card"><span class="text-muted">Searches</span><strong>${metrics.searches.total}</strong></div></div>
+    <div class="col-md-3"><div class="metric-card"><span class="text-muted">Index Entries</span><strong>${metrics.searchIndex.entries}</strong></div></div>
     <div class="col-12">
       <h3 class="h6 mt-3">Top Categories</h3>
       ${renderBars(metrics.categoryCounts)}

@@ -2,7 +2,6 @@ export const COLLECTIONS = {
   records: "records",
   searchIndex: "search_index",
   rankingProfiles: "ranking_profiles",
-  searchEvents: "search_events",
 };
 
 export async function ensureDatabaseIndexes(db) {
@@ -33,8 +32,5 @@ export async function ensureDatabaseIndexes(db) {
         { key: { name: 1 }, unique: true },
         { key: { isActive: 1 } },
       ]),
-    db
-      .collection(COLLECTIONS.searchEvents)
-      .createIndexes([{ key: { createdAt: -1 } }, { key: { query: 1 } }]),
   ]);
 }

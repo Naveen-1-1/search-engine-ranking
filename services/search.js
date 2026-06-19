@@ -62,19 +62,6 @@ export async function searchRecords(db, options = {}) {
   const start = (page - 1) * limit;
   const results = scoredResults.slice(start, start + limit);
 
-  await logSearchEvent(db, {
-    query: options.q || "",
-    tokens,
-    filters: {
-      category: options.category || "",
-      source: options.source || "",
-      tags: parseTagsFilter(options),
-      from: options.from || "",
-      to: options.to || "",
-    },
-    resultCount: total,
-  });
-
   return {
     query: options.q || "",
     tokens,
@@ -123,13 +110,6 @@ function buildRecordFilter(options) {
   }
 
   return filter;
-}
-
-async function logSearchEvent(db, event) {
-  await db.collection(COLLECTIONS.searchEvents).insertOne({
-    ...event,
-    createdAt: new Date(),
-  });
 }
 
 function parseTagsFilter(options) {
