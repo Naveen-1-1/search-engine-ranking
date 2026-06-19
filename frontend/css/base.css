@@ -1,0 +1,54 @@
+body {
+  background: #f5f3ef;
+  color: #1f2933;
+}
+
+.navbar {
+  border-bottom: 1px solid #ded8ce;
+}
+
+.page-shell {
+  max-width: 1180px;
+}
+
+.eyebrow {
+  color: #6f6a61;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.surface-card {
+  background: #fffdf8;
+  border: 1px solid #e3ddd2;
+  border-radius: 18px;
+  box-shadow: 0 16px 35px rgba(31, 41, 51, 0.07);
+}
+
+.muted-copy {
+  color: #68717b;
+}
+
+.tag-pill {
+  background: #eef2ff;
+  border: 1px solid #dce3ff;
+  border-radius: 999px;
+  color: #34437a;
+  display: inline-block;
+  font-size: 0.78rem;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.2rem 0.55rem;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 1px solid #e5e0d8;
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 1.6rem;
+}

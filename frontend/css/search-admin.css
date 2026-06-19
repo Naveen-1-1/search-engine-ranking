@@ -1,0 +1,29 @@
+.weight-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.profile-row.active {
+  background: #fff8e8;
+}
+
+.chart-row {
+  align-items: center;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(100px, 1fr) 4fr auto;
+}
+
+.chart-bar {
+  background: #dbeafe;
+  border-radius: 999px;
+  height: 0.7rem;
+  overflow: hidden;
+}
+
+.chart-bar span {
+  background: #2563eb;
+  display: block;
+  height: 100%;
+}
