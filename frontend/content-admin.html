@@ -35,14 +35,15 @@
             <p class="eyebrow mb-1">Content Admin</p>
             <h1 class="h3">Manage searchable records</h1>
             <p class="muted-copy">
-              Create or edit records. Saved records are added to the search
-              index automatically.
+              Create or edit records, or search the corpus using any filled-in
+              field values. Saved records are added to the search index
+              automatically.
             </p>
             <form id="recordForm" class="row g-3">
               <input id="recordId" type="hidden" />
               <div class="col-12">
                 <label class="form-label" for="title">Title</label>
-                <input id="title" class="form-control" required />
+                <input id="title" class="form-control" />
               </div>
               <div class="col-12">
                 <label class="form-label" for="summary">Summary</label>
@@ -50,7 +51,6 @@
                   id="summary"
                   class="form-control"
                   rows="2"
-                  required
                 ></textarea>
               </div>
               <div class="col-12">
@@ -59,12 +59,11 @@
                   id="body"
                   class="form-control"
                   rows="5"
-                  required
                 ></textarea>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="category">Category</label>
-                <select id="category" class="form-select" required>
+                <select id="category" class="form-select">
                   <option disabled selected value="">Select category</option>
                   <option>Web Development</option>
                   <option>Databases</option>
@@ -78,7 +77,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="source">Source</label>
-                <select id="source" class="form-select" required>
+                <select id="source" class="form-select">
                   <option disabled selected value="">Select source</option>
                   <option>Developer Blog</option>
                   <option>API Docs</option>
@@ -265,7 +264,6 @@
                   id="publishedAt"
                   class="form-control"
                   type="date"
-                  required
                 />
               </div>
               <div class="col-md-3">
@@ -276,12 +274,12 @@
                   min="0"
                   max="1000"
                   type="number"
-                  value="100"
                 />
               </div>
               <div class="col-md-3">
                 <label class="form-label" for="status">Status</label>
                 <select id="status" class="form-select">
+                  <option value="">Any status</option>
                   <option value="published">Published</option>
                   <option value="draft">Draft</option>
                   <option value="archived">Archived</option>
@@ -301,16 +299,22 @@
                   min="1"
                   max="60"
                   type="number"
-                  value="5"
                 />
               </div>
               <div class="col-12">
                 <label class="form-label" for="sourceUrl">Source URL</label>
                 <input id="sourceUrl" class="form-control" type="url" />
               </div>
-              <div class="col-12 d-flex gap-2">
+              <div class="col-12 d-flex flex-wrap gap-2">
                 <button class="btn btn-primary" type="submit">
                   Save record
+                </button>
+                <button
+                  id="searchRecordsButton"
+                  class="btn btn-outline-primary"
+                  type="button"
+                >
+                  Search
                 </button>
                 <button
                   id="resetForm"
@@ -332,7 +336,7 @@
             >
               <div>
                 <p class="eyebrow mb-1">Corpus</p>
-                <h2 class="h4 mb-0">Recent records</h2>
+                <h2 id="resultsHeading" class="h4 mb-0">Matching records</h2>
               </div>
               <button
                 id="reindexButton"

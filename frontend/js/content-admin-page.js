@@ -1,6 +1,14 @@
-import { apiRequest, escapeHtml, formatDate } from "./api.js";
+import { apiRequest, buildQuery, escapeHtml, formatDate } from "./api.js";
 
 const MAX_TAG_SELECTIONS = 3;
+const REQUIRED_SAVE_FIELDS = [
+  "title",
+  "summary",
+  "body",
+  "category",
+  "source",
+  "publishedAt",
+];
 
 const form = document.querySelector("#recordForm");
 const table = document.querySelector("#recordsTable");
@@ -8,8 +16,11 @@ const formMessage = document.querySelector("#formMessage");
 const adminMessage = document.querySelector("#adminMessage");
 const reindexButton = document.querySelector("#reindexButton");
 const resetFormButton = document.querySelector("#resetForm");
+const searchRecordsButton = document.querySelector("#searchRecordsButton");
+const resultsHeading = document.querySelector("#resultsHeading");
 const recordTagsLabel = document.querySelector("#recordTagsLabel");
 let records = [];
+let hasSearched = false;
 
 form.addEventListener("change", (event) => {
   if (event.target.name !== "tags") {
@@ -34,6 +45,7 @@ form.addEventListener("submit", async (event) => {
 });
 
 resetFormButton.addEventListener("click", resetForm);
+searchRecordsButton.addEventListener("click", searchRecords);
 reindexButton.addEventListener("click", rebuildIndex);
 
 table.addEventListener("click", async (event) => {
@@ -54,24 +66,52 @@ table.addEventListener("click", async (event) => {
   }
 });
 
-loadRecords();
+renderInitialResults();
 
-async function loadRecords() {
-  table.innerHTML = `<tr><td colspan="4">Loading records...</td></tr>`;
+async function searchRecords() {
+  const params = getSearchParams();
+
+  if (Object.keys(params).length === 1 && params.limit) {
+    showMessage(
+      adminMessage,
+      "Enter at least one field value before searching.",
+      "warning"
+    );
+    return;
+  }
+
+  hasSearched = true;
+  table.innerHTML = `<tr><td colspan="4">Searching records...</td></tr>`;
+  adminMessage.innerHTML = "";
 
   try {
-    const data = await apiRequest("/records?limit=20");
+    const data = await apiRequest(`/records?${buildQuery(params)}`);
 
     records = data.items;
+    resultsHeading.textContent = `${data.total} matching records`;
     renderRecords();
   } catch (err) {
+    records = [];
     table.innerHTML = `<tr><td colspan="4" class="text-danger">${escapeHtml(err.message)}</td></tr>`;
   }
 }
 
 async function saveRecord() {
-  const id = document.querySelector("#recordId").value;
   const payload = getFormPayload();
+  const missingField = REQUIRED_SAVE_FIELDS.find(
+    (field) => !String(payload[field] ?? "").trim()
+  );
+
+  if (missingField) {
+    showMessage(
+      formMessage,
+      "Fill in title, summary, body, category, source, and published date before saving.",
+      "danger"
+    );
+    return;
+  }
+
+  const id = document.querySelector("#recordId").value;
   const method = id ? "PUT" : "POST";
   const path = id ? `/records/${id}` : "/records";
 
@@ -86,7 +126,10 @@ async function saveRecord() {
       "success"
     );
     resetForm();
-    await loadRecords();
+
+    if (hasSearched) {
+      await searchRecords();
+    }
   } catch (err) {
     showMessage(formMessage, err.message, "danger");
   }
@@ -104,7 +147,12 @@ async function deleteRecord(record) {
       "Record deleted and removed from the index.",
       "success"
     );
-    await loadRecords();
+
+    if (hasSearched) {
+      await searchRecords();
+    } else {
+      renderInitialResults();
+    }
   } catch (err) {
     showMessage(adminMessage, err.message, "danger");
   }
@@ -130,9 +178,16 @@ async function rebuildIndex() {
   }
 }
 
+function renderInitialResults() {
+  records = [];
+  hasSearched = false;
+  resultsHeading.textContent = "Matching records";
+  table.innerHTML = `<tr><td colspan="4" class="text-muted">Fill in any fields and click Search to find matching records.</td></tr>`;
+}
+
 function renderRecords() {
   if (records.length === 0) {
-    table.innerHTML = `<tr><td colspan="4">No records yet.</td></tr>`;
+    table.innerHTML = `<tr><td colspan="4">No matching records found.</td></tr>`;
     return;
   }
 
@@ -171,39 +226,99 @@ function fillForm(record) {
   document.querySelector("#publishedAt").value = toDateInput(
     record.publishedAt
   );
-  document.querySelector("#popularity").value = record.popularity || 0;
-  document.querySelector("#status").value = record.status || "published";
+  document.querySelector("#popularity").value =
+    record.popularity === undefined || record.popularity === null
+      ? ""
+      : record.popularity;
+  document.querySelector("#status").value = record.status || "";
   document.querySelector("#author").value = record.author || "";
-  document.querySelector("#readingMinutes").value = record.readingMinutes || 5;
+  document.querySelector("#readingMinutes").value =
+    record.readingMinutes === undefined || record.readingMinutes === null
+      ? ""
+      : record.readingMinutes;
   document.querySelector("#sourceUrl").value = record.sourceUrl || "";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function getFormPayload() {
   return {
-    title: document.querySelector("#title").value,
-    summary: document.querySelector("#summary").value,
-    body: document.querySelector("#body").value,
+    title: document.querySelector("#title").value.trim(),
+    summary: document.querySelector("#summary").value.trim(),
+    body: document.querySelector("#body").value.trim(),
     category: document.querySelector("#category").value,
     source: document.querySelector("#source").value,
     tags: getSelectedTags(),
     publishedAt: document.querySelector("#publishedAt").value,
-    popularity: document.querySelector("#popularity").value,
-    status: document.querySelector("#status").value,
-    author: document.querySelector("#author").value,
-    readingMinutes: document.querySelector("#readingMinutes").value,
-    sourceUrl: document.querySelector("#sourceUrl").value,
+    popularity: document.querySelector("#popularity").value || 100,
+    status: document.querySelector("#status").value || "published",
+    author: document.querySelector("#author").value.trim(),
+    readingMinutes: document.querySelector("#readingMinutes").value || 5,
+    sourceUrl: document.querySelector("#sourceUrl").value.trim(),
   };
+}
+
+function getSearchParams() {
+  const payload = getFormPayload();
+  const params = { limit: 100 };
+
+  if (payload.title) {
+    params.title = payload.title;
+  }
+
+  if (payload.summary) {
+    params.summary = payload.summary;
+  }
+
+  if (payload.body) {
+    params.body = payload.body;
+  }
+
+  if (payload.category) {
+    params.category = payload.category;
+  }
+
+  if (payload.source) {
+    params.source = payload.source;
+  }
+
+  if (payload.tags.length > 0) {
+    params.tags = payload.tags;
+  }
+
+  if (payload.publishedAt) {
+    params.publishedAt = payload.publishedAt;
+  }
+
+  if (document.querySelector("#popularity").value !== "") {
+    params.popularity = payload.popularity;
+  }
+
+  if (document.querySelector("#status").value) {
+    params.status = payload.status;
+  }
+
+  if (document.querySelector("#readingMinutes").value !== "") {
+    params.readingMinutes = payload.readingMinutes;
+  }
+
+  if (payload.author) {
+    params.author = payload.author;
+  }
+
+  if (payload.sourceUrl) {
+    params.sourceUrl = payload.sourceUrl;
+  }
+
+  return params;
 }
 
 function resetForm() {
   form.reset();
   document.querySelector("#recordId").value = "";
-  document.querySelector("#status").value = "published";
-  document.querySelector("#popularity").value = 100;
-  document.querySelector("#readingMinutes").value = 5;
   setSelectedTags([]);
   formMessage.innerHTML = "";
+  renderInitialResults();
+  adminMessage.innerHTML = "";
 }
 
 function getSelectedTags() {

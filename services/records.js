@@ -173,11 +173,38 @@ function buildRecordFilter(options) {
     filter.source = options.source;
   }
 
-  if (options.tag) {
-    filter.tags = options.tag;
+  const tags = parseTagsFilter(options);
+
+  if (tags.length === 1) {
+    filter.tags = tags[0];
+  } else if (tags.length > 1) {
+    filter.tags = { $all: tags };
   }
 
-  if (options.from || options.to) {
+  for (const field of ["title", "summary", "body", "author", "sourceUrl"]) {
+    const value = String(options[field] ?? "").trim();
+
+    if (value) {
+      filter[field] = { $regex: escapeRegex(value), $options: "i" };
+    }
+  }
+
+  if (options.popularity !== undefined && options.popularity !== "") {
+    filter.popularity = Number(options.popularity);
+  }
+
+  if (options.readingMinutes !== undefined && options.readingMinutes !== "") {
+    filter.readingMinutes = Number(options.readingMinutes);
+  }
+
+  if (options.publishedAt) {
+    const dayStart = new Date(options.publishedAt);
+    const dayEnd = new Date(options.publishedAt);
+
+    dayStart.setUTCHours(0, 0, 0, 0);
+    dayEnd.setUTCHours(23, 59, 59, 999);
+    filter.publishedAt = { $gte: dayStart, $lte: dayEnd };
+  } else if (options.from || options.to) {
     filter.publishedAt = {};
 
     if (options.from) {
@@ -190,6 +217,24 @@ function buildRecordFilter(options) {
   }
 
   return filter;
+}
+
+function parseTagsFilter(options) {
+  const raw = options.tags ?? options.tag;
+
+  if (!raw) {
+    return [];
+  }
+
+  const tags = (Array.isArray(raw) ? raw : String(raw).split(","))
+    .map((tag) => tag.trim().toLowerCase())
+    .filter(Boolean);
+
+  return [...new Set(tags)];
+}
+
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function buildIdentifierFilter(identifier) {
