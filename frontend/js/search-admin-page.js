@@ -177,10 +177,6 @@ function renderMetrics(metrics) {
       <h3 class="h6 mt-3">Top Tags</h3>
       ${renderList(metrics.topTags)}
     </div>
-    <div class="col-md-6">
-      <h3 class="h6 mt-3">Popular Queries</h3>
-      ${renderList(metrics.searches.popularQueries)}
-    </div>
   `;
 }
 

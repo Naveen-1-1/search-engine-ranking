@@ -16,7 +16,6 @@ export async function getAppMetrics(db) {
     indexEntries,
     uniqueTerms,
     searchCount,
-    popularQueries,
     zeroResultQueries,
     searchesByDay,
   ] = await Promise.all([
@@ -40,14 +39,6 @@ export async function getAppMetrics(db) {
       .toArray()
       .then((items) => items[0]?.count || 0),
     searchEvents.countDocuments(),
-    searchEvents
-      .aggregate([
-        { $match: { query: { $ne: "" } } },
-        { $group: { _id: "$query", count: { $sum: 1 } } },
-        { $sort: { count: -1 } },
-        { $limit: 10 },
-      ])
-      .toArray(),
     searchEvents
       .aggregate([
         { $match: { resultCount: 0, query: { $ne: "" } } },
@@ -91,7 +82,6 @@ export async function getAppMetrics(db) {
     },
     searches: {
       total: searchCount,
-      popularQueries,
       zeroResultQueries,
       byDay: searchesByDay.reverse(),
     },
