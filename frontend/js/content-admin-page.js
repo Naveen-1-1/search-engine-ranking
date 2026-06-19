@@ -18,9 +18,12 @@ const reindexButton = document.querySelector("#reindexButton");
 const resetFormButton = document.querySelector("#resetForm");
 const searchRecordsButton = document.querySelector("#searchRecordsButton");
 const resultsHeading = document.querySelector("#resultsHeading");
+const pagination = document.querySelector("#recordsPagination");
 const recordTagsLabel = document.querySelector("#recordTagsLabel");
 let records = [];
 let hasSearched = false;
+let searchPage = 1;
+const searchLimit = 10;
 
 form.addEventListener("change", (event) => {
   if (event.target.name !== "tags") {
@@ -45,7 +48,10 @@ form.addEventListener("submit", async (event) => {
 });
 
 resetFormButton.addEventListener("click", resetForm);
-searchRecordsButton.addEventListener("click", searchRecords);
+searchRecordsButton.addEventListener("click", () => {
+  searchPage = 1;
+  searchRecords();
+});
 reindexButton.addEventListener("click", rebuildIndex);
 
 table.addEventListener("click", async (event) => {
@@ -71,7 +77,7 @@ renderInitialResults();
 async function searchRecords() {
   const params = getSearchParams();
 
-  if (Object.keys(params).length === 1 && params.limit) {
+  if (!hasSearchFilters(params)) {
     showMessage(
       adminMessage,
       "Enter at least one field value before searching.",
@@ -82,17 +88,21 @@ async function searchRecords() {
 
   hasSearched = true;
   table.innerHTML = `<tr><td colspan="4">Searching records...</td></tr>`;
+  pagination.innerHTML = "";
   adminMessage.innerHTML = "";
 
   try {
     const data = await apiRequest(`/records?${buildQuery(params)}`);
 
     records = data.items;
+    searchPage = data.page;
     resultsHeading.textContent = `${data.total} matching records`;
     renderRecords();
+    renderPagination(data);
   } catch (err) {
     records = [];
     table.innerHTML = `<tr><td colspan="4" class="text-danger">${escapeHtml(err.message)}</td></tr>`;
+    pagination.innerHTML = "";
   }
 }
 
@@ -149,6 +159,9 @@ async function deleteRecord(record) {
     );
 
     if (hasSearched) {
+      if (records.length === 1 && searchPage > 1) {
+        searchPage -= 1;
+      }
       await searchRecords();
     } else {
       renderInitialResults();
@@ -181,8 +194,34 @@ async function rebuildIndex() {
 function renderInitialResults() {
   records = [];
   hasSearched = false;
+  searchPage = 1;
   resultsHeading.textContent = "Matching records";
   table.innerHTML = `<tr><td colspan="4" class="text-muted">Fill in any fields and click Search to find matching records.</td></tr>`;
+  pagination.innerHTML = "";
+}
+
+function renderPagination(data) {
+  pagination.innerHTML = "";
+
+  if (data.pages <= 1) {
+    return;
+  }
+
+  for (let page = 1; page <= data.pages; page += 1) {
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+
+    item.className = `page-item${page === data.page ? " active" : ""}`;
+    button.className = "page-link";
+    button.type = "button";
+    button.textContent = page;
+    button.addEventListener("click", () => {
+      searchPage = page;
+      searchRecords();
+    });
+    item.append(button);
+    pagination.append(item);
+  }
 }
 
 function renderRecords() {
@@ -259,7 +298,10 @@ function getFormPayload() {
 
 function getSearchParams() {
   const payload = getFormPayload();
-  const params = { limit: 100 };
+  const params = {
+    page: searchPage,
+    limit: searchLimit,
+  };
 
   if (payload.title) {
     params.title = payload.title;
@@ -310,6 +352,12 @@ function getSearchParams() {
   }
 
   return params;
+}
+
+function hasSearchFilters(params) {
+  const ignored = new Set(["page", "limit"]);
+
+  return Object.keys(params).some((key) => !ignored.has(key));
 }
 
 function resetForm() {
