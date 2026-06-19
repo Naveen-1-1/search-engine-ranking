@@ -17,33 +17,6 @@
   min-height: 3.5rem;
 }
 
-.suggestions-menu {
-  background: #ffffff;
-  border: 1px solid #ddd6cb;
-  border-radius: 12px;
-  display: none;
-  left: 0;
-  max-height: 220px;
-  overflow-y: auto;
-  position: absolute;
-  right: 0;
-  top: calc(100% + 0.35rem);
-  z-index: 10;
-}
-
-.suggestion-button {
-  background: transparent;
-  border: 0;
-  display: block;
-  padding: 0.7rem 1rem;
-  text-align: left;
-  width: 100%;
-}
-
-.suggestion-button:hover {
-  background: #f3f4f6;
-}
-
 .result-card {
   transition:
     transform 140ms ease,

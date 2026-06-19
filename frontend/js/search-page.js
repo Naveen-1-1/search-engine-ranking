@@ -18,18 +18,15 @@ const filterForm = document.querySelector("#filterForm");
 const resetSearchButton = document.querySelector("#resetSearchButton");
 const tagFilterLabel = document.querySelector("#tagFilterLabel");
 const searchInput = document.querySelector("#searchInput");
-const suggestions = document.querySelector("#suggestions");
 const results = document.querySelector("#results");
 const resultHeading = document.querySelector("#resultHeading");
 const rankingProfile = document.querySelector("#rankingProfile");
 const pagination = document.querySelector("#pagination");
-let autocompleteTimer;
 
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   state.q = searchInput.value.trim();
   state.page = 1;
-  suggestions.style.display = "none";
   runSearch();
 });
 
@@ -64,18 +61,6 @@ filterForm.addEventListener("submit", (event) => {
 });
 
 resetSearchButton.addEventListener("click", resetSearch);
-
-searchInput.addEventListener("input", () => {
-  clearTimeout(autocompleteTimer);
-
-  autocompleteTimer = setTimeout(loadSuggestions, 180);
-});
-
-document.addEventListener("click", (event) => {
-  if (!suggestions.contains(event.target) && event.target !== searchInput) {
-    suggestions.style.display = "none";
-  }
-});
 
 readStateFromUrl();
 applyStateToForm();
@@ -152,7 +137,6 @@ function resetSearch() {
   searchInput.value = "";
   filterForm.reset();
   updateTagFilterLabel();
-  suggestions.style.display = "none";
   runSearch();
 }
 
@@ -172,52 +156,6 @@ async function runSearch() {
     results.innerHTML = `<div class="col-12"><div class="alert alert-danger">${escapeHtml(err.message)}</div></div>`;
   }
 }
-
-async function loadSuggestions() {
-  const q = searchInput.value.trim();
-
-  if (q.length < 2) {
-    suggestions.style.display = "none";
-    return;
-  }
-
-  try {
-    const data = await apiRequest(`/autocomplete?${buildQuery({ q })}`);
-
-    if (data.suggestions.length === 0) {
-      suggestions.style.display = "none";
-      return;
-    }
-
-    suggestions.innerHTML = data.suggestions
-      .map(
-        (suggestion) => `
-          <button class="suggestion-button" type="button" data-term="${escapeHtml(suggestion.term)}">
-            ${escapeHtml(suggestion.term)}
-            <span class="text-muted small">(${suggestion.frequency})</span>
-          </button>
-        `
-      )
-      .join("");
-    suggestions.style.display = "block";
-  } catch {
-    suggestions.style.display = "none";
-  }
-}
-
-suggestions.addEventListener("click", (event) => {
-  const button = event.target.closest("button[data-term]");
-
-  if (!button) {
-    return;
-  }
-
-  searchInput.value = button.dataset.term;
-  state.q = button.dataset.term;
-  state.page = 1;
-  suggestions.style.display = "none";
-  runSearch();
-});
 
 function renderResults(data) {
   resultHeading.textContent =

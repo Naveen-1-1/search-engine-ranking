@@ -8,13 +8,12 @@ Class link: To be added before submission.
 
 ## Project Objective
 
-SearchX demonstrates how a search system works without external search libraries. Users can search a large seeded corpus, use autocomplete suggestions, apply filters, review ranked results, and open detail pages. Admin pages support record CRUD, full index rebuilds, ranking profile CRUD, and MongoDB aggregation metrics.
+SearchX demonstrates how a search system works without external search libraries. Users can search a large seeded corpus, apply filters, review ranked results, and open detail pages. Admin pages support record CRUD, full index rebuilds, ranking profile CRUD, and MongoDB aggregation metrics.
 
 ## Features
 
 - Custom tokenization and stopword removal.
 - Custom MongoDB-backed inverted index.
-- Autocomplete from indexed terms.
 - Ranked search results using title, summary, body, tags, source, popularity, and recency weights.
 - Filters for category, source, tag, and date range.
 - Record detail pages.
@@ -91,7 +90,7 @@ The frontend detects Live Server on port `8080` and calls the backend at `http:/
 ## How To Use
 
 1. Open the Search page and enter a keyword such as `mongodb`, `ranking`, or `api`.
-2. Choose an autocomplete suggestion or submit the search form.
+2. Submit the search form.
 3. Use category, source, tag, and date filters to refine results.
 4. Open any result to view the full record detail page.
 5. Use Content Admin to create, update, delete, and re-index records.

@@ -1,7 +1,7 @@
 import { COLLECTIONS } from "../db/collections.js";
 import { scoreRecord } from "./scorer.js";
 import { getActiveRankingProfile } from "./rankingProfiles.js";
-import { tokenize, uniqueTokens } from "./tokenizer.js";
+import { uniqueTokens } from "./tokenizer.js";
 
 export async function searchRecords(db, options = {}) {
   const page = Math.max(Number(options.page) || 1, 1);
@@ -91,42 +91,6 @@ export async function searchRecords(db, options = {}) {
   };
 }
 
-export async function getAutocompleteSuggestions(db, queryPrefix, limit = 10) {
-  const [prefix] = tokenize(queryPrefix || "");
-
-  if (!prefix) {
-    return [];
-  }
-
-  return db
-    .collection(COLLECTIONS.searchIndex)
-    .aggregate([
-      {
-        $match: {
-          term: {
-            $regex: `^${escapeRegex(prefix)}`,
-          },
-        },
-      },
-      {
-        $group: {
-          _id: "$term",
-          frequency: { $sum: "$termFrequency" },
-        },
-      },
-      { $sort: { frequency: -1, _id: 1 } },
-      { $limit: Math.min(Math.max(Number(limit) || 10, 1), 20) },
-      {
-        $project: {
-          _id: 0,
-          term: "$_id",
-          frequency: 1,
-        },
-      },
-    ])
-    .toArray();
-}
-
 function buildRecordFilter(options) {
   const filter = {};
 
@@ -166,10 +130,6 @@ async function logSearchEvent(db, event) {
     ...event,
     createdAt: new Date(),
   });
-}
-
-function escapeRegex(value) {
-  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function parseTagsFilter(options) {
