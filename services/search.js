@@ -7,7 +7,7 @@ export async function searchRecords(db, options = {}) {
   const page = Math.max(Number(options.page) || 1, 1);
   const limit = Math.min(Math.max(Number(options.limit) || 10, 1), 50);
   const tokens = uniqueTokens(options.q || "");
-  const recordFilter = buildPublishedRecordFilter(options);
+  const recordFilter = buildRecordFilter(options);
   const rankingProfile = await getActiveRankingProfile(db);
   const matchesByRecordId = new Map();
 
@@ -127,10 +127,8 @@ export async function getAutocompleteSuggestions(db, queryPrefix, limit = 10) {
     .toArray();
 }
 
-function buildPublishedRecordFilter(options) {
-  const filter = {
-    status: "published",
-  };
+function buildRecordFilter(options) {
+  const filter = {};
 
   if (options.category) {
     filter.category = options.category;

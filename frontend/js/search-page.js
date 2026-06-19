@@ -149,7 +149,7 @@ function renderResults(data) {
   resultHeading.textContent =
     data.query || state.category || state.source || state.tags.length
       ? `${data.total} matching records`
-      : `${data.total} published records`;
+      : `${data.total} records`;
   rankingProfile.textContent = `Ranking: ${data.rankingProfile.name}`;
 
   if (data.results.length === 0) {

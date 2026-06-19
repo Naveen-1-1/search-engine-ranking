@@ -4,7 +4,7 @@ import { buildRecordTermStats } from "./tokenizer.js";
 const INDEX_BATCH_SIZE = 500;
 
 export async function indexRecord(db, record) {
-  if (!record?._id || record.status !== "published") {
+  if (!record?._id) {
     return 0;
   }
 
@@ -40,7 +40,7 @@ export async function rebuildSearchIndex(db) {
 
   await searchIndex.deleteMany({});
 
-  const cursor = records.find({ status: "published" });
+  const cursor = records.find({});
 
   for await (const record of cursor) {
     const entries = buildIndexEntries(record);
