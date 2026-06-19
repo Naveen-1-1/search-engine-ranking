@@ -35,7 +35,7 @@
             <p class="eyebrow mb-1">Content Admin</p>
             <h1 class="h3">Manage searchable records</h1>
             <p class="muted-copy">
-              Create or edit records. Published records are added to the search
+              Create or edit records. Saved records are added to the search
               index automatically.
             </p>
             <form id="recordForm" class="row g-3">
@@ -64,20 +64,198 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="category">Category</label>
-                <input id="category" class="form-control" required />
+                <select id="category" class="form-select" required>
+                  <option disabled selected value="">Select category</option>
+                  <option>Web Development</option>
+                  <option>Databases</option>
+                  <option>Search</option>
+                  <option>Cloud</option>
+                  <option>Security</option>
+                  <option>UX Design</option>
+                  <option>Data Science</option>
+                  <option>DevOps</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="source">Source</label>
-                <input id="source" class="form-control" required />
+                <select id="source" class="form-select" required>
+                  <option disabled selected value="">Select source</option>
+                  <option>Developer Blog</option>
+                  <option>API Docs</option>
+                  <option>Course Notes</option>
+                  <option>Community Forum</option>
+                  <option>Research Digest</option>
+                  <option>Product Docs</option>
+                  <option>Newsroom</option>
+                  <option>Archive</option>
+                </select>
               </div>
               <div class="col-12">
-                <label class="form-label" for="tags">Tags</label>
-                <input
-                  id="tags"
-                  class="form-control"
-                  placeholder="mongodb, search, ranking"
-                />
-                <p class="form-hint mb-0">Separate tags with commas.</p>
+                <label class="form-label" for="recordTagsToggle">Tags</label>
+                <div class="dropdown tag-filter-dropdown">
+                  <button
+                    id="recordTagsToggle"
+                    class="form-select tag-filter-toggle dropdown-toggle w-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false"
+                  >
+                    <span id="recordTagsLabel" class="tag-filter-label"
+                      >Select tags</span
+                    >
+                  </button>
+                  <div class="dropdown-menu tag-filter-menu w-100">
+                    <p class="tag-filter-hint px-3 py-2 mb-0">
+                      Select up to 3 tags
+                    </p>
+                    <div class="dropdown-divider my-0"></div>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="javascript"
+                      />
+                      javascript
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="node"
+                      />
+                      node
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="express"
+                      />
+                      express
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="mongodb"
+                      />
+                      mongodb
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="bootstrap"
+                      />
+                      bootstrap
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="api"
+                      />
+                      api
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="frontend"
+                      />
+                      frontend
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="backend"
+                      />
+                      backend
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="search"
+                      />
+                      search
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="ranking"
+                      />
+                      ranking
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="indexing"
+                      />
+                      indexing
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="performance"
+                      />
+                      performance
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="security"
+                      />
+                      security
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="deployment"
+                      />
+                      deployment
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="testing"
+                      />
+                      testing
+                    </label>
+                    <label class="dropdown-item tag-filter-option">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="tags"
+                        value="css"
+                      />
+                      css
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="publishedAt"

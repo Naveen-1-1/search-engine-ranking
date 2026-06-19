@@ -1,12 +1,32 @@
 import { apiRequest, escapeHtml, formatDate } from "./api.js";
 
+const MAX_TAG_SELECTIONS = 3;
+
 const form = document.querySelector("#recordForm");
 const table = document.querySelector("#recordsTable");
 const formMessage = document.querySelector("#formMessage");
 const adminMessage = document.querySelector("#adminMessage");
 const reindexButton = document.querySelector("#reindexButton");
 const resetFormButton = document.querySelector("#resetForm");
+const recordTagsLabel = document.querySelector("#recordTagsLabel");
 let records = [];
+
+form.addEventListener("change", (event) => {
+  if (event.target.name !== "tags") {
+    return;
+  }
+
+  if (
+    event.target.checked &&
+    form.querySelectorAll('input[name="tags"]:checked').length >
+      MAX_TAG_SELECTIONS
+  ) {
+    event.target.checked = false;
+    return;
+  }
+
+  updateTagLabel();
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -99,7 +119,7 @@ async function rebuildIndex() {
 
     showMessage(
       adminMessage,
-      `Rebuilt index for ${result.indexedRecords} published records and ${result.indexedTerms} index entries.`,
+      `Rebuilt index for ${result.indexedRecords} records and ${result.indexedTerms} index entries.`,
       "success"
     );
   } catch (err) {
@@ -145,9 +165,9 @@ function fillForm(record) {
   document.querySelector("#title").value = record.title || "";
   document.querySelector("#summary").value = record.summary || "";
   document.querySelector("#body").value = record.body || "";
-  document.querySelector("#category").value = record.category || "";
-  document.querySelector("#source").value = record.source || "";
-  document.querySelector("#tags").value = (record.tags || []).join(", ");
+  setSelectValue("#category", record.category);
+  setSelectValue("#source", record.source);
+  setSelectedTags(record.tags || []);
   document.querySelector("#publishedAt").value = toDateInput(
     record.publishedAt
   );
@@ -166,7 +186,7 @@ function getFormPayload() {
     body: document.querySelector("#body").value,
     category: document.querySelector("#category").value,
     source: document.querySelector("#source").value,
-    tags: document.querySelector("#tags").value,
+    tags: getSelectedTags(),
     publishedAt: document.querySelector("#publishedAt").value,
     popularity: document.querySelector("#popularity").value,
     status: document.querySelector("#status").value,
@@ -182,7 +202,51 @@ function resetForm() {
   document.querySelector("#status").value = "published";
   document.querySelector("#popularity").value = 100;
   document.querySelector("#readingMinutes").value = 5;
+  setSelectedTags([]);
   formMessage.innerHTML = "";
+}
+
+function getSelectedTags() {
+  return [...form.querySelectorAll('input[name="tags"]:checked')].map(
+    (input) => input.value
+  );
+}
+
+function setSelectedTags(tags) {
+  const selectedTags = new Set(tags.map((tag) => String(tag).toLowerCase()));
+
+  form.querySelectorAll('input[name="tags"]').forEach((input) => {
+    input.checked = selectedTags.has(input.value);
+  });
+
+  updateTagLabel();
+}
+
+function updateTagLabel() {
+  const selectedTags = getSelectedTags();
+
+  recordTagsLabel.textContent =
+    selectedTags.length === 0 ? "Select tags" : selectedTags.join(", ");
+}
+
+function setSelectValue(selector, value) {
+  const select = document.querySelector(selector);
+
+  if (!value) {
+    select.value = "";
+    return;
+  }
+
+  const hasOption = [...select.options].some(
+    (option) => option.value === value
+  );
+
+  if (!hasOption) {
+    select.add(new Option(value, value, true, true));
+    return;
+  }
+
+  select.value = value;
 }
 
 function showMessage(container, message, type) {

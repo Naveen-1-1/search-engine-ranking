@@ -52,3 +52,38 @@ body {
   display: block;
   font-size: 1.6rem;
 }
+
+.tag-filter-toggle {
+  align-items: center;
+  background-image: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.tag-filter-toggle::after {
+  margin-left: auto;
+}
+
+.tag-filter-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag-filter-menu {
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.tag-filter-option {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.tag-filter-hint {
+  color: #667085;
+  font-size: 0.78rem;
+}

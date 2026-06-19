@@ -63,38 +63,3 @@
   font-size: 0.78rem;
   padding: 0.25rem 0.6rem;
 }
-
-.tag-filter-toggle {
-  align-items: center;
-  background-image: none;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.tag-filter-toggle::after {
-  margin-left: auto;
-}
-
-#tagFilterLabel {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.tag-filter-menu {
-  max-height: 16rem;
-  overflow-y: auto;
-}
-
-.tag-filter-option {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  gap: 0.55rem;
-}
-
-.tag-filter-hint {
-  color: #667085;
-  font-size: 0.78rem;
-}
