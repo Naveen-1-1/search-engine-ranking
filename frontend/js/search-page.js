@@ -1,10 +1,12 @@
 import { apiRequest, buildQuery, escapeHtml, formatDate } from "./api.js";
 
+const MAX_TAG_SELECTIONS = 3;
+
 const state = {
   q: "",
   category: "",
   source: "",
-  tag: "",
+  tags: [],
   from: "",
   to: "",
   page: 1,
@@ -13,6 +15,7 @@ const state = {
 
 const searchForm = document.querySelector("#searchForm");
 const filterForm = document.querySelector("#filterForm");
+const tagFilterLabel = document.querySelector("#tagFilterLabel");
 const searchInput = document.querySelector("#searchInput");
 const suggestions = document.querySelector("#suggestions");
 const results = document.querySelector("#results");
@@ -29,12 +32,26 @@ searchForm.addEventListener("submit", (event) => {
   runSearch();
 });
 
-filterForm.addEventListener("change", () => {
+filterForm.addEventListener("change", (event) => {
+  if (
+    event.target.name === "tags" &&
+    event.target.checked &&
+    filterForm.querySelectorAll('input[name="tags"]:checked').length >
+      MAX_TAG_SELECTIONS
+  ) {
+    event.target.checked = false;
+    return;
+  }
+
+  if (event.target.name === "tags") {
+    updateTagFilterLabel();
+  }
+
   const formData = new FormData(filterForm);
 
   state.category = formData.get("category");
   state.source = formData.get("source");
-  state.tag = formData.get("tag");
+  state.tags = formData.getAll("tags");
   state.from = formData.get("from");
   state.to = formData.get("to");
   state.page = 1;
@@ -58,6 +75,15 @@ document.addEventListener("click", (event) => {
 });
 
 runSearch();
+
+function updateTagFilterLabel() {
+  const selectedTags = [
+    ...filterForm.querySelectorAll('input[name="tags"]:checked'),
+  ].map((input) => input.value);
+
+  tagFilterLabel.textContent =
+    selectedTags.length === 0 ? "All tags" : selectedTags.join(", ");
+}
 
 async function runSearch() {
   results.innerHTML = `<div class="col-12"><div class="surface-card p-4">Loading results...</div></div>`;
@@ -121,7 +147,7 @@ suggestions.addEventListener("click", (event) => {
 
 function renderResults(data) {
   resultHeading.textContent =
-    data.query || state.category || state.source || state.tag
+    data.query || state.category || state.source || state.tags.length
       ? `${data.total} matching records`
       : `${data.total} published records`;
   rankingProfile.textContent = `Ranking: ${data.rankingProfile.name}`;

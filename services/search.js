@@ -68,7 +68,7 @@ export async function searchRecords(db, options = {}) {
     filters: {
       category: options.category || "",
       source: options.source || "",
-      tag: options.tag || options.tags || "",
+      tags: parseTagsFilter(options),
       from: options.from || "",
       to: options.to || "",
     },
@@ -140,10 +140,12 @@ function buildPublishedRecordFilter(options) {
     filter.source = options.source;
   }
 
-  const tag = options.tag || options.tags;
+  const tags = parseTagsFilter(options);
 
-  if (tag) {
-    filter.tags = tag;
+  if (tags.length === 1) {
+    filter.tags = tags[0];
+  } else if (tags.length > 1) {
+    filter.tags = { $all: tags };
   }
 
   if (options.from || options.to) {
@@ -170,4 +172,18 @@ async function logSearchEvent(db, event) {
 
 function escapeRegex(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function parseTagsFilter(options) {
+  const raw = options.tags ?? options.tag;
+
+  if (!raw) {
+    return [];
+  }
+
+  const tags = (Array.isArray(raw) ? raw : String(raw).split(","))
+    .map((tag) => tag.trim().toLowerCase())
+    .filter(Boolean);
+
+  return [...new Set(tags)].slice(0, 3);
 }

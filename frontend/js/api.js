@@ -23,6 +23,18 @@ export function buildQuery(params) {
   const query = new URLSearchParams();
 
   Object.entries(params).forEach(([key, value]) => {
+    if (Array.isArray(value)) {
+      const items = value
+        .map((item) => String(item ?? "").trim())
+        .filter(Boolean);
+
+      if (items.length > 0) {
+        query.set(key, items.join(","));
+      }
+
+      return;
+    }
+
     if (value !== undefined && value !== null && String(value).trim() !== "") {
       query.set(key, value);
     }

@@ -119,13 +119,169 @@
             </select>
           </div>
           <div class="col-md-2">
-            <label class="form-label" for="tagFilter">Tag</label>
-            <input
-              id="tagFilter"
-              class="form-control"
-              name="tag"
-              placeholder="mongodb"
-            />
+            <label class="form-label" for="tagFilterToggle">Tags</label>
+            <div class="dropdown tag-filter-dropdown">
+              <button
+                id="tagFilterToggle"
+                class="form-select tag-filter-toggle dropdown-toggle w-100"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                <span id="tagFilterLabel">All tags</span>
+              </button>
+              <div class="dropdown-menu tag-filter-menu w-100">
+                <p class="tag-filter-hint px-3 py-2 mb-0">
+                  Select up to 3 tags
+                </p>
+                <div class="dropdown-divider my-0"></div>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="javascript"
+                  />
+                  javascript
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="node"
+                  />
+                  node
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="express"
+                  />
+                  express
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="mongodb"
+                  />
+                  mongodb
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="bootstrap"
+                  />
+                  bootstrap
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="api"
+                  />
+                  api
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="frontend"
+                  />
+                  frontend
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="backend"
+                  />
+                  backend
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="search"
+                  />
+                  search
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="ranking"
+                  />
+                  ranking
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="indexing"
+                  />
+                  indexing
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="performance"
+                  />
+                  performance
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="security"
+                  />
+                  security
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="deployment"
+                  />
+                  deployment
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="testing"
+                  />
+                  testing
+                </label>
+                <label class="dropdown-item tag-filter-option">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="tags"
+                    value="css"
+                  />
+                  css
+                </label>
+              </div>
+            </div>
           </div>
           <div class="col-md-2">
             <label class="form-label" for="fromFilter">From</label>
