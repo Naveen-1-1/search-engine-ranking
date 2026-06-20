@@ -46,9 +46,13 @@ An admin user who manages search behavior and application-level metrics. This us
 The wireframes below show the layout for each public-facing page in the project.
 
 ### Search Page
+TODO
 
 ### Content Admin Page
+TODO
 
 ### Search Admin Page
+TODO
 
 ### How to Use Page
+TODO

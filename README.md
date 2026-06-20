@@ -24,7 +24,9 @@ TODO
 
 ## Design Document
 
-TODO
+The design document is available in `DESIGN.md`. It includes the required project description,
+personas, user stories, design mockups/wireframes/screenshots that explain the portfolio's
+layout.
 
 ## Demo Video
 
@@ -41,14 +43,6 @@ TODO
 ## License
 
 This project uses the MIT License. See `LICENSE` for details.
-
-## Tech Stack
-
-- Node.js
-- Express.js
-- MongoDB native Node.js driver
-- Vanilla ES modules
-- HTML, CSS, Bootstrap
 
 ## Requirements
 
