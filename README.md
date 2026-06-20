@@ -16,7 +16,7 @@ SearchX is a full-stack search engine and ranking platform where users can searc
 
 ## Screenshot
 
-TODO
+![Search homepage screenshot](./docs/Application-Screenshot.jpeg)
 
 ## Build And Run Instructions
 
@@ -40,7 +40,7 @@ TODO
 
 ## License
 
-TODO
+This project uses the MIT License. See `LICENSE` for details.
 
 ## Tech Stack
 
