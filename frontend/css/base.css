@@ -11,6 +11,19 @@ body {
   max-width: 1180px;
 }
 
+.pagination {
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pagination .page-link {
+  border-radius: 0.5rem;
+}
+
+.pagination .page-item:not(:first-child) .page-link {
+  margin-left: 0;
+}
+
 .eyebrow {
   color: #6f6a61;
   font-size: 0.78rem;

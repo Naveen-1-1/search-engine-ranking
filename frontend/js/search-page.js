@@ -1,4 +1,5 @@
 import { apiRequest, buildQuery, escapeHtml, formatDate } from "./api.js";
+import { renderPagination as renderPaginationControls } from "./pagination.js";
 
 const MAX_TAG_SELECTIONS = 3;
 
@@ -216,25 +217,13 @@ function renderResultCard(record, score, matchedTerms) {
 }
 
 function renderPagination(data) {
-  pagination.innerHTML = "";
-
-  if (data.pages <= 1) {
-    return;
-  }
-
-  for (let page = 1; page <= data.pages; page += 1) {
-    const item = document.createElement("li");
-    const button = document.createElement("button");
-
-    item.className = `page-item${page === data.page ? " active" : ""}`;
-    button.className = "page-link";
-    button.type = "button";
-    button.textContent = page;
-    button.addEventListener("click", () => {
+  renderPaginationControls({
+    container: pagination,
+    page: data.page,
+    pages: data.pages,
+    onPageChange: (page) => {
       state.page = page;
       runSearch();
-    });
-    item.append(button);
-    pagination.append(item);
-  }
+    },
+  });
 }
