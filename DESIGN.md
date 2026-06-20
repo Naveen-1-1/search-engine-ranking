@@ -46,16 +46,16 @@ An admin user who manages search behavior and application-level metrics. This us
 The wireframes below show the layout for each public-facing page in the project.
 
 ### Search Page
-![Search Page wireframe](./docs/wireframes/Search Page.jpg)
+![Search Page wireframe](./docs/wireframes/Search-Page.jpg)
 
 ### Record Detail Page
-TODO
+![Record Detail wireframe](./docs/wireframes/Record-Detail-Page.jpg)
 
 ### Content Admin Page
-TODO
+![Content Admin wireframe](./docs/wireframes/Content-Admin-Page.jpg)
 
 ### Search Admin Page
-TODO
+![Search Admin wireframe](./docs/wireframes/Search-Admin-Page.jpg)
 
 ### How to Use Page
-TODO
+![How to Use wireframe](./docs/wireframes/How-To-Use-Page.jpg)
