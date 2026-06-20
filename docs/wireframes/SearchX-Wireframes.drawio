@@ -1,0 +1,375 @@
+<mxfile host="app.diagrams.net" pages="5">
+  <diagram name="Search Page" id="yIib-pNjM8C3mYWKXWCH">
+    <mxGraphModel dx="2398" dy="2028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  classDef page fill:#ffffff,stroke:#111,stroke-width:2px,color:#111;\n  classDef nav fill:#f1f3f5,stroke:#555,color:#111;\n  classDef hero fill:#dbeafe,stroke:#4f81bd,color:#111;\n  classDef card fill:#f8f9fa,stroke:#777,color:#111;\n  classDef result fill:#eef7ff,stroke:#0d6efd,color:#111;\n\n  Title[\&quot;Search Page Wireframe\&quot;]:::page\n\n  Nav[\&quot;Navbar: SearchX | Search | Content Admin | Search Admin | How to Use\&quot;]:::nav\n\n  Hero[\&quot;Hero Search Area&lt;br/&gt;&lt;br/&gt;Left: Custom search engine intro copy&lt;br/&gt;Right: Search keywords input + Search button\&quot;]:::hero\n\n  Filters[\&quot;Filter Bar&lt;br/&gt;&lt;br/&gt;Category dropdown | Source dropdown | Tags dropdown | From date | To date | Reset\&quot;]:::card\n\n  Header[\&quot;Results Header&lt;br/&gt;&lt;br/&gt;Left: Results title&lt;br/&gt;Right: Ranking profile badge\&quot;]:::card\n\n  Results[\&quot;Results Section&lt;br/&gt;&lt;br/&gt;Ranked result cards&lt;br/&gt;Each card: title, summary, category, source, tags, metadata, detail link\&quot;]:::result\n\n  Pagination[\&quot;Pagination Controls\&quot;]:::card\n\n  Title ~~~ Nav\n  Nav ~~~ Hero\n  Hero ~~~ Filters\n  Filters ~~~ Header\n  Header ~~~ Results\n  Results ~~~ Pagination&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="0lmGyAMPApQP3eWMi6AT-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry height="1020" width="960" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="RMDOIyfBLU7OtCWnJErN-6" parent="0lmGyAMPApQP3eWMi6AT-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="990" width="760" x="2.5" y="10" as="geometry" />
+        </mxCell>
+        <UserObject label="Search Page Wireframe" mermaidId="n:Title" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Search Page Wireframe" id="0lmGyAMPApQP3eWMi6AT-2">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="226" x="269" y="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" mermaidId="n:Nav" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" id="0lmGyAMPApQP3eWMi6AT-3">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="581" x="92" y="144" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Hero Search Area&#xa;&#xa;Left: Custom search engine intro copy&#xa;Right: Search keywords input + Search button" mermaidId="n:Hero" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Hero Search Area&#xa;&#xa;Left: Custom search engine intro copy&#xa;Right: Search keywords input + Search button" id="0lmGyAMPApQP3eWMi6AT-4">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="112" width="387" x="189" y="248" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Filter Bar&#xa;&#xa;Category dropdown | Source dropdown | Tags dropdown | From date | To date | Reset" mermaidId="n:Filters" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Filter Bar&#xa;&#xa;Category dropdown | Source dropdown | Tags dropdown | From date | To date | Reset" id="0lmGyAMPApQP3eWMi6AT-5">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="684" x="40" y="410" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Results Header&#xa;&#xa;Left: Results title&#xa;Right: Ranking profile badge" mermaidId="n:Header" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Results Header&#xa;&#xa;Left: Results title&#xa;Right: Ranking profile badge" id="0lmGyAMPApQP3eWMi6AT-6">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="112" width="264" x="250" y="553" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Results Section&#xa;&#xa;Ranked result cards&#xa;Each card: title, summary, category, source, tags, metadata, detail link" mermaidId="n:Results" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Results Section&#xa;&#xa;Ranked result cards&#xa;Each card: title, summary, category, source, tags, metadata, detail link" id="0lmGyAMPApQP3eWMi6AT-7">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="112" width="575" x="95" y="715" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Pagination Controls" mermaidId="n:Pagination" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Pagination Controls" id="0lmGyAMPApQP3eWMi6AT-8">
+          <mxCell parent="0lmGyAMPApQP3eWMi6AT-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="199" x="283" y="877" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Title-&gt;Nav#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-9">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-2" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-3" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Nav-&gt;Hero#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-10">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-3" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-4" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Hero-&gt;Filters#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-11">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-4" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-5" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Filters-&gt;Header#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-12">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-5" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-6" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Header-&gt;Results#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-13">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-6" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-7" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Results-&gt;Pagination#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0lmGyAMPApQP3eWMi6AT-14">
+          <mxCell edge="1" parent="0lmGyAMPApQP3eWMi6AT-1" source="0lmGyAMPApQP3eWMi6AT-7" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0lmGyAMPApQP3eWMi6AT-8" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="_g3JSw2W7HdglLHOV0OC" name="Record Detail Page">
+    <mxGraphModel dx="1548" dy="928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  classDef page fill:#ffffff,stroke:#111,stroke-width:2px,color:#111;\n  classDef nav fill:#f1f3f5,stroke:#555,color:#111;\n  classDef hero fill:#dbeafe,stroke:#4f81bd,color:#111;\n  classDef card fill:#f8f9fa,stroke:#777,color:#111;\n  classDef meta fill:#fff3cd,stroke:#c99a00,color:#111;\n\n  Title[\&quot;Record Detail Page Wireframe\&quot;]:::page\n\n  Nav[\&quot;Navbar: SearchX | Search | Content Admin | Search Admin | How to Use\&quot;]:::nav\n\n  Back[\&quot;Back to Search Button\&quot;]:::card\n\n  Detail[\&quot;Record Detail Card&lt;br/&gt;&lt;br/&gt;Record title&lt;br/&gt;Summary&lt;br/&gt;Full body content\&quot;]:::hero\n\n  Meta[\&quot;Metadata Area&lt;br/&gt;&lt;br/&gt;Category | Source | Tags | Published date | Author | Reading minutes | Popularity\&quot;]:::meta\n\n  Title ~~~ Nav\n  Nav ~~~ Back\n  Back ~~~ Detail\n  Detail ~~~ Meta&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="TCV6-d5I9fNXFOWzeGv8-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry height="1150" width="830" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="KKGuWwalf-4Grtne7U1y-1" parent="TCV6-d5I9fNXFOWzeGv8-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="630" width="690" x="21.5" y="20" as="geometry" />
+        </mxCell>
+        <UserObject label="Record Detail Page Wireframe" mermaidId="n:Title" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Record Detail Page Wireframe" id="TCV6-d5I9fNXFOWzeGv8-2">
+          <mxCell parent="TCV6-d5I9fNXFOWzeGv8-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="275" x="229" y="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" mermaidId="n:Nav" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" id="TCV6-d5I9fNXFOWzeGv8-3">
+          <mxCell parent="TCV6-d5I9fNXFOWzeGv8-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="581" x="76" y="144" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Back to Search Button" mermaidId="n:Back" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Back to Search Button" id="TCV6-d5I9fNXFOWzeGv8-4">
+          <mxCell parent="TCV6-d5I9fNXFOWzeGv8-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="218" x="258" y="248" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Record Detail Card&#xa;&#xa;Record title&#xa;Summary&#xa;Full body content" mermaidId="n:Detail" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Record Detail Card&#xa;&#xa;Record title&#xa;Summary&#xa;Full body content" id="TCV6-d5I9fNXFOWzeGv8-5">
+          <mxCell parent="TCV6-d5I9fNXFOWzeGv8-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="194" x="270" y="352" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Metadata Area&#xa;&#xa;Category | Source | Tags | Published date | Author | Reading minutes | Popularity" mermaidId="n:Meta" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Metadata Area&#xa;&#xa;Category | Source | Tags | Published date | Author | Reading minutes | Popularity" id="TCV6-d5I9fNXFOWzeGv8-6">
+          <mxCell parent="TCV6-d5I9fNXFOWzeGv8-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="653" x="40" y="533" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Title-&gt;Nav#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TCV6-d5I9fNXFOWzeGv8-7">
+          <mxCell edge="1" parent="TCV6-d5I9fNXFOWzeGv8-1" source="TCV6-d5I9fNXFOWzeGv8-2" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="TCV6-d5I9fNXFOWzeGv8-3" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Nav-&gt;Back#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TCV6-d5I9fNXFOWzeGv8-8">
+          <mxCell edge="1" parent="TCV6-d5I9fNXFOWzeGv8-1" source="TCV6-d5I9fNXFOWzeGv8-3" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="TCV6-d5I9fNXFOWzeGv8-4" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Back-&gt;Detail#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TCV6-d5I9fNXFOWzeGv8-9">
+          <mxCell edge="1" parent="TCV6-d5I9fNXFOWzeGv8-1" source="TCV6-d5I9fNXFOWzeGv8-4" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="TCV6-d5I9fNXFOWzeGv8-5" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Detail-&gt;Meta#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TCV6-d5I9fNXFOWzeGv8-10">
+          <mxCell edge="1" parent="TCV6-d5I9fNXFOWzeGv8-1" source="TCV6-d5I9fNXFOWzeGv8-5" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="TCV6-d5I9fNXFOWzeGv8-6" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="T5AGYwPHB6Cl6X0Le7-w" name="Content Admin Page">
+    <mxGraphModel dx="2398" dy="2028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  classDef page fill:#ffffff,stroke:#111,stroke-width:2px,color:#111;\n  classDef nav fill:#f1f3f5,stroke:#555,color:#111;\n  classDef left fill:#dbeafe,stroke:#4f81bd,color:#111;\n  classDef right fill:#eef7ff,stroke:#0d6efd,color:#111;\n  classDef card fill:#f8f9fa,stroke:#777,color:#111;\n\n  Title[\&quot;Content Admin Page Wireframe\&quot;]:::page\n\n  Nav[\&quot;Navbar: SearchX | Search | Content Admin | Search Admin | How to Use\&quot;]:::nav\n\n  subgraph Main[\&quot;Main Admin Area\&quot;]\n    direction LR\n\n    Form[\&quot;Left Panel: Manage Searchable Records&lt;br/&gt;&lt;br/&gt;Title input&lt;br/&gt;Summary textarea&lt;br/&gt;Body textarea&lt;br/&gt;Category dropdown&lt;br/&gt;Source dropdown&lt;br/&gt;Tags dropdown&lt;br/&gt;Published date&lt;br/&gt;Popularity&lt;br/&gt;Status&lt;br/&gt;Author&lt;br/&gt;Reading minutes&lt;br/&gt;Source URL&lt;br/&gt;&lt;br/&gt;Buttons: Save Record | Search | Clear\&quot;]:::left\n\n    Corpus[\&quot;Right Panel: Corpus Records&lt;br/&gt;&lt;br/&gt;Top: Matching records title + Rebuild index button&lt;br/&gt;Message area&lt;br/&gt;&lt;br/&gt;Records table:&lt;br/&gt;Title | Status | Category | Actions&lt;br/&gt;&lt;br/&gt;Pagination\&quot;]:::right\n  end\n\n  Footer[\&quot;Form/Admin Status Message Areas\&quot;]:::card\n\n  Title ~~~ Nav\n  Nav ~~~ Main\n  Main ~~~ Footer&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="0zDjghmCzUamJlKQx8GZ-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry height="500" width="640" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="cgJWrCKvAZTOYuLvVA5n-1" parent="0zDjghmCzUamJlKQx8GZ-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="1020" width="630" x="-140" y="-540" as="geometry" />
+        </mxCell>
+        <UserObject label="Main Admin Area" mermaidId="n:Main" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Main Admin Area" id="0zDjghmCzUamJlKQx8GZ-2">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="665" width="491" x="-75" y="-312" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Left Panel: Manage Searchable Records&#xa;&#xa;Title input&#xa;Summary textarea&#xa;Body textarea&#xa;Category dropdown&#xa;Source dropdown&#xa;Tags dropdown&#xa;Published date&#xa;Popularity&#xa;Status&#xa;Author&#xa;Reading minutes&#xa;Source URL&#xa;&#xa;Buttons: Save Record | Search | Clear" mermaidId="n:Form" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Left Panel: Manage Searchable Records&#xa;&#xa;Title input&#xa;Summary textarea&#xa;Body textarea&#xa;Category dropdown&#xa;Source dropdown&#xa;Tags dropdown&#xa;Published date&#xa;Popularity&#xa;Status&#xa;Author&#xa;Reading minutes&#xa;Source URL&#xa;&#xa;Buttons: Save Record | Search | Clear" id="0zDjghmCzUamJlKQx8GZ-3">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="342" width="341" x="75" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Right Panel: Corpus Records&#xa;&#xa;Top: Matching records title + Rebuild index button&#xa;Message area&#xa;&#xa;Records table:&#xa;Title | Status | Category | Actions&#xa;&#xa;Pagination" mermaidId="n:Corpus" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Right Panel: Corpus Records&#xa;&#xa;Top: Matching records title + Rebuild index button&#xa;Message area&#xa;&#xa;Records table:&#xa;Title | Status | Category | Actions&#xa;&#xa;Pagination" id="0zDjghmCzUamJlKQx8GZ-4">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="208" width="421" x="35" y="437" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Content Admin Page Wireframe" mermaidId="n:Title" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Content Admin Page Wireframe" id="0zDjghmCzUamJlKQx8GZ-5">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="284" x="29" y="-520" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" mermaidId="n:Nav" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" id="0zDjghmCzUamJlKQx8GZ-6">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="581" x="-120" y="-416" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Form/Admin Status Message Areas" mermaidId="n:Footer" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Form/Admin Status Message Areas" id="0zDjghmCzUamJlKQx8GZ-7">
+          <mxCell parent="0zDjghmCzUamJlKQx8GZ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="305" x="18" y="403" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Title-&gt;Nav#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0zDjghmCzUamJlKQx8GZ-8">
+          <mxCell edge="1" parent="0zDjghmCzUamJlKQx8GZ-1" source="0zDjghmCzUamJlKQx8GZ-5" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0zDjghmCzUamJlKQx8GZ-6" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Nav-&gt;Main#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0zDjghmCzUamJlKQx8GZ-9">
+          <mxCell edge="1" parent="0zDjghmCzUamJlKQx8GZ-1" source="0zDjghmCzUamJlKQx8GZ-6" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0zDjghmCzUamJlKQx8GZ-2" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Main-&gt;Footer#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="0zDjghmCzUamJlKQx8GZ-10">
+          <mxCell edge="1" parent="0zDjghmCzUamJlKQx8GZ-1" source="0zDjghmCzUamJlKQx8GZ-2" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="0zDjghmCzUamJlKQx8GZ-7" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="yM6sbInet8ya-TpTsi_w" name="Search Admin Page">
+    <mxGraphModel dx="1935" dy="1160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cXmhZYlof1r8dIB04uki-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="930" width="781" x="28.5" y="10" as="geometry" />
+        </mxCell>
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  classDef page fill:#ffffff,stroke:#111,stroke-width:2px,color:#111;\n  classDef nav fill:#f1f3f5,stroke:#555,color:#111;\n  classDef left fill:#dbeafe,stroke:#4f81bd,color:#111;\n  classDef right fill:#eef7ff,stroke:#0d6efd,color:#111;\n  classDef metric fill:#fff3cd,stroke:#c99a00,color:#111;\n\n  Title[\&quot;Search Admin Page Wireframe\&quot;]:::page\n\n  Nav[\&quot;Navbar: SearchX | Search | Content Admin | Search Admin | How to Use\&quot;]:::nav\n\n  subgraph Main[\&quot;Main Search Admin Area\&quot;]\n    direction LR\n\n    Form[\&quot;Left Panel: Tune Ranking Profiles&lt;br/&gt;&lt;br/&gt;Profile name input&lt;br/&gt;Description textarea&lt;br/&gt;&lt;br/&gt;Weight inputs:&lt;br/&gt;Title | Summary | Body | Tags | Source | Popularity | Recency&lt;br/&gt;&lt;br/&gt;Active profile checkbox&lt;br/&gt;Buttons: Save Profile | New Profile\&quot;]:::left\n\n    subgraph RightColumn[\&quot;Right Panel\&quot;]\n      direction TB\n\n      Profiles[\&quot;Ranking Profiles Table&lt;br/&gt;&lt;br/&gt;Columns: Name | Active | Actions\&quot;]:::right\n\n      Metrics[\&quot;Metrics Card&lt;br/&gt;&lt;br/&gt;Search and document health&lt;br/&gt;Metric tiles\&quot;]:::metric\n    end\n  end\n\n  Title ~~~ Nav\n  Nav ~~~ Main&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="_Yzg-Srm_qq1IM9zy7Tz-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Main Search Admin Area" mermaidId="n:Main" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Main Search Admin Area" id="_Yzg-Srm_qq1IM9zy7Tz-2">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="519" width="758" x="40" y="248" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Right Panel" mermaidId="n:RightColumn" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Right Panel" id="_Yzg-Srm_qq1IM9zy7Tz-3">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-2" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="177" width="688" x="35" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Ranking Profiles Table&#xa;&#xa;Columns: Name | Active | Actions" mermaidId="n:Profiles" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Ranking Profiles Table&#xa;&#xa;Columns: Name | Active | Actions" id="_Yzg-Srm_qq1IM9zy7Tz-4">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#eef7ff;strokeColor=#0d6efd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="303" x="35" y="55" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Metrics Card&#xa;&#xa;Search and document health&#xa;Metric tiles" mermaidId="n:Metrics" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Metrics Card&#xa;&#xa;Search and document health&#xa;Metric tiles" id="_Yzg-Srm_qq1IM9zy7Tz-5">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-3" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="112" width="265" x="388" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Left Panel: Tune Ranking Profiles&#xa;&#xa;Profile name input&#xa;Description textarea&#xa;&#xa;Weight inputs:&#xa;Title | Summary | Body | Tags | Source | Popularity | Recency&#xa;&#xa;Active profile checkbox&#xa;Buttons: Save Profile | New Profile" mermaidId="n:Form" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Left Panel: Tune Ranking Profiles&#xa;&#xa;Profile name input&#xa;Description textarea&#xa;&#xa;Weight inputs:&#xa;Title | Summary | Body | Tags | Source | Popularity | Recency&#xa;&#xa;Active profile checkbox&#xa;Buttons: Save Profile | New Profile" id="_Yzg-Srm_qq1IM9zy7Tz-6">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="227" width="510" x="124" y="272" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Search Admin Page Wireframe" mermaidId="n:Title" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Search Admin Page Wireframe" id="_Yzg-Srm_qq1IM9zy7Tz-7">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="275" x="282" y="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" mermaidId="n:Nav" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" id="_Yzg-Srm_qq1IM9zy7Tz-8">
+          <mxCell parent="_Yzg-Srm_qq1IM9zy7Tz-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="581" x="129" y="144" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Title-&gt;Nav#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="_Yzg-Srm_qq1IM9zy7Tz-9">
+          <mxCell edge="1" parent="_Yzg-Srm_qq1IM9zy7Tz-1" source="_Yzg-Srm_qq1IM9zy7Tz-7" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="_Yzg-Srm_qq1IM9zy7Tz-8" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Nav-&gt;Main#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="_Yzg-Srm_qq1IM9zy7Tz-10">
+          <mxCell edge="1" parent="_Yzg-Srm_qq1IM9zy7Tz-1" source="_Yzg-Srm_qq1IM9zy7Tz-8" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="_Yzg-Srm_qq1IM9zy7Tz-2" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="P2Z-f4r0v5DaX9RvHwFk" name="How To Use Page">
+    <mxGraphModel dx="2785" dy="2260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  classDef page fill:#ffffff,stroke:#111,stroke-width:2px,color:#111;\n  classDef nav fill:#f1f3f5,stroke:#555,color:#111;\n  classDef hero fill:#dbeafe,stroke:#4f81bd,color:#111;\n  classDef card fill:#f8f9fa,stroke:#777,color:#111;\n  classDef note fill:#fff3cd,stroke:#c99a00,color:#111;\n\n  Title[\&quot;How To Use Page Wireframe\&quot;]:::page\n\n  Nav[\&quot;Navbar: SearchX | Search | Content Admin | Search Admin | How to Use\&quot;]:::nav\n\n  Intro[\&quot;Project Guide Card&lt;br/&gt;&lt;br/&gt;Heading: How to use SearchX&lt;br/&gt;Short description of the app and tech stack\&quot;]:::hero\n\n  subgraph Workflows[\&quot;Workflow Section\&quot;]\n    direction LR\n\n    SearchUser[\&quot;Search User Workflow&lt;br/&gt;&lt;br/&gt;1. Open Search page&lt;br/&gt;2. Type keyword&lt;br/&gt;3. Submit search&lt;br/&gt;4. Apply filters&lt;br/&gt;5. Open detail page\&quot;]:::card\n\n    AdminUser[\&quot;Admin Workflow&lt;br/&gt;&lt;br/&gt;1. Manage records in Content Admin&lt;br/&gt;2. Tune ranking profiles in Search Admin&lt;br/&gt;3. Review metrics\&quot;]:::card\n  end\n\n  HowWorks[\&quot;How Search Works Section&lt;br/&gt;&lt;br/&gt;Short explanation of indexing, filtering, and ranking\&quot;]:::note\n\n  Title ~~~ Nav\n  Nav ~~~ Intro\n  Intro ~~~ Workflows\n  Workflows ~~~ HowWorks&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="O2VKy2FDJTH2uw1jKVcX-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry height="1019" width="730.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="h6nZs-9-Ru4EvjIi1KPR-1" parent="O2VKy2FDJTH2uw1jKVcX-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="990" width="760" x="-49.5" y="9" as="geometry" />
+        </mxCell>
+        <UserObject label="Workflow Section" mermaidId="n:Workflows" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Workflow Section" id="O2VKy2FDJTH2uw1jKVcX-2">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="415" width="418" x="122" y="410" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Search User Workflow&#xa;&#xa;1. Open Search page&#xa;2. Type keyword&#xa;3. Submit search&#xa;4. Apply filters&#xa;5. Open detail page" mermaidId="n:SearchUser" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Search User Workflow&#xa;&#xa;1. Open Search page&#xa;2. Type keyword&#xa;3. Submit search&#xa;4. Apply filters&#xa;5. Open detail page" id="O2VKy2FDJTH2uw1jKVcX-3">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="169" width="216" x="101" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Admin Workflow&#xa;&#xa;1. Manage records in Content Admin&#xa;2. Tune ranking profiles in Search Admin&#xa;3. Review metrics" mermaidId="n:AdminUser" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Admin Workflow&#xa;&#xa;1. Manage records in Content Admin&#xa;2. Tune ranking profiles in Search Admin&#xa;3. Review metrics" id="O2VKy2FDJTH2uw1jKVcX-4">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f8f9fa;strokeColor=#777;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="348" x="35" y="264" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="How To Use Page Wireframe" mermaidId="n:Title" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="How To Use Page Wireframe" id="O2VKy2FDJTH2uw1jKVcX-5">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-1" style="html=1;whiteSpace=wrap;strokeWidth=2;fillColor=default;strokeColor=#111;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="260" x="201" y="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" mermaidId="n:Nav" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Navbar: SearchX | Search | Content Admin | Search Admin | How to Use" id="O2VKy2FDJTH2uw1jKVcX-6">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#f1f3f5;strokeColor=#555;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="581" x="40" y="144" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Project Guide Card&#xa;&#xa;Heading: How to use SearchX&#xa;Short description of the app and tech stack" mermaidId="n:Intro" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Project Guide Card&#xa;&#xa;Heading: How to use SearchX&#xa;Short description of the app and tech stack" id="O2VKy2FDJTH2uw1jKVcX-7">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#dbeafe;strokeColor=#4f81bd;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="112" width="371" x="145" y="248" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="How Search Works Section&#xa;&#xa;Short explanation of indexing, filtering, and ranking" mermaidId="n:HowWorks" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="How Search Works Section&#xa;&#xa;Short explanation of indexing, filtering, and ranking" id="O2VKy2FDJTH2uw1jKVcX-8">
+          <mxCell parent="O2VKy2FDJTH2uw1jKVcX-1" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=#fff3cd;strokeColor=#c99a00;fontColor=#111;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="434" x="114" y="875" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Title-&gt;Nav#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="O2VKy2FDJTH2uw1jKVcX-9">
+          <mxCell edge="1" parent="O2VKy2FDJTH2uw1jKVcX-1" source="O2VKy2FDJTH2uw1jKVcX-5" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="O2VKy2FDJTH2uw1jKVcX-6" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Nav-&gt;Intro#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="O2VKy2FDJTH2uw1jKVcX-10">
+          <mxCell edge="1" parent="O2VKy2FDJTH2uw1jKVcX-1" source="O2VKy2FDJTH2uw1jKVcX-6" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="O2VKy2FDJTH2uw1jKVcX-7" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Intro-&gt;Workflows#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="O2VKy2FDJTH2uw1jKVcX-11">
+          <mxCell edge="1" parent="O2VKy2FDJTH2uw1jKVcX-1" source="O2VKy2FDJTH2uw1jKVcX-7" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="O2VKy2FDJTH2uw1jKVcX-2" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Workflows-&gt;HowWorks#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=none;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="O2VKy2FDJTH2uw1jKVcX-12">
+          <mxCell edge="1" parent="O2VKy2FDJTH2uw1jKVcX-1" source="O2VKy2FDJTH2uw1jKVcX-2" style="curved=1;startArrow=none;endArrow=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="O2VKy2FDJTH2uw1jKVcX-8" visible="0">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
