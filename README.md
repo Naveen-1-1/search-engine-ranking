@@ -38,7 +38,13 @@ Google Slides presentation: https://docs.google.com/presentation/d/1vOY7gIFPHXoT
 
 ## GenAI Disclosure
 
-TODO
+Generative AI was used as an assistant during this project. AI support included designing
+wireframes, verifying that the project met the functional requirements, checking the project
+against the rubric, and generating and formatting README and presentation materials.
+
+AI was also used to help generate the How To Use page by planning the work in Plan Mode and
+then executing that plan in Agent Mode. The project used Cursor IDE with GPT-5.5 models for
+complex tasks, Composer 2.5 for subagents, and Composer 2.5 for simple updates.
 
 ## License
 
