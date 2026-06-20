@@ -9,8 +9,8 @@
     "dev-frontend": "live-server frontend",
     "dev-backend": "nodemon backend.js",
     "seed": "node scripts/seed-records.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint .",
+    "lint": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check"
   },
