@@ -6,7 +6,7 @@ Author: Naveen Shankar
 
 Course: Web Development (CS 5610), MS CS at Northeastern University, Boston
 
-Public project page: TODO
+Public project page: [https://search-engine-ranking.onrender.com](https://search-engine-ranking.onrender.com)
 
 Class link: [https://johnguerra.co/classes/webDevelopment_online_summer_2026/](https://johnguerra.co/classes/webDevelopment_online_summer_2026/)
 
@@ -16,7 +16,7 @@ SearchX is a full-stack search engine and ranking platform where users can searc
 
 ## Screenshot
 
-![Search homepage screenshot](./docs/Application-Screenshot.jpeg)
+Search homepage screenshot
 
 ## Build And Run Instructions
 
@@ -54,7 +54,7 @@ The seed command validates that the JSON file has at least 1,000 records, import
 Run the Express app:
 
 ```bash
-npm run dev
+npm start
 ```
 
 Open:
@@ -75,7 +75,7 @@ TODO
 
 ## Presentation Slides
 
-Google Slides presentation: https://docs.google.com/presentation/d/1vOY7gIFPHXoTSpVxcU1zUzNGnBWORcoBrkDv2XUmG10/edit?usp=sharing
+Google Slides presentation: [https://docs.google.com/presentation/d/1vOY7gIFPHXoTSpVxcU1zUzNGnBWORcoBrkDv2XUmG10/edit?usp=sharing](https://docs.google.com/presentation/d/1vOY7gIFPHXoTSpVxcU1zUzNGnBWORcoBrkDv2XUmG10/edit?usp=sharing)
 
 ## GenAI Disclosure
 
