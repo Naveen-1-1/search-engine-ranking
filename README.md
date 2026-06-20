@@ -16,7 +16,7 @@ SearchX is a full-stack search engine and ranking platform where users can searc
 
 ## Screenshot
 
-Search homepage screenshot
+![Search homepage screenshot](./docs/Application-Screenshot.jpeg)
 
 ## Build And Run Instructions
 
