@@ -34,7 +34,7 @@ TODO
 
 ## Presentation Slides
 
-TODO
+Google Slides presentation: https://docs.google.com/presentation/d/1vOY7gIFPHXoTSpVxcU1zUzNGnBWORcoBrkDv2XUmG10/edit?usp=sharing
 
 ## GenAI Disclosure
 
