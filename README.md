@@ -71,7 +71,7 @@ layout.
 
 ## Demo Video
 
-TODO
+Public narrated demo video: https://youtu.be/AZkARzuHo9k
 
 ## Presentation Slides
 
